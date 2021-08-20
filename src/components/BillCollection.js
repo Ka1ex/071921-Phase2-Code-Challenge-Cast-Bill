@@ -1,12 +1,12 @@
 import React from 'react';
-
-export default function BillCollection() {
+import BillCard from './BillCard'
+export default function BillCollection({billData, onClickHandler}) {
   // Your code here
 
   return (
     <div className="ui four column grid">
       <div className="row">
-        {/*...and here..*/}
+        {billData.map(bill => <BillCard id={bill.id} bill={bill} onClickHandler={onClickHandler} />)}
       </div>
     </div>
   );
